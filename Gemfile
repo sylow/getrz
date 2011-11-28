@@ -10,6 +10,11 @@ gem 'slim'
 gem 'sqlite3'
 gem 'haml-rails'
 gem 'json'
+gem 'authlogic'
+gem "rails3-generators"
+
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Gems used only for assets and not required
 # in production environments by default.
