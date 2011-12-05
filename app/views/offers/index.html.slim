@@ -1,0 +1,28 @@
+h2 Offers for
+table class="condensed-table"
+  tbody
+      tr
+        td
+          ul class="media-grid"
+            li
+              a href="/offers"
+                img src="/assets/90x90.gif" class="thumbnail"
+        td
+          h3 Product Name
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+table class="condensed-table"
+  thead
+    tr
+      th Offer
+      th width="100px" Vendor
+      th Buy
+  tbody
+    - 1.upto(4) do |i|
+      tr
+        td
+          h3 Offer #{i}
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        td Vendor #{i}
+        td
+          input class="btn small" value="Buy now" type="submit"

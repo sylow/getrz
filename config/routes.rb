@@ -1,6 +1,7 @@
 Web::Application.routes.draw do
   get "search" => "search#index"
 
+  resources :offers
   resources :authentications
   resources :user_sessions
   resources :users
