@@ -1,4 +1,5 @@
 h2 = @title || "Customer offers"
+- product = Sample::PRODUCTS[0]
 table class="condensed-table"
   tbody
       tr
@@ -6,10 +7,10 @@ table class="condensed-table"
           ul class="media-grid"
             li
               a href="/offers"
-                img src="/assets/90x90.gif" class="thumbnail"
+                img src="/assets/#{product[:image]}" class="thumbnail"
         td
-          h3 Product Name
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          h3 #{product[:name]} 
+          #{product[:description]}
           br
           br
           - if @hide_custom_offer != "yes"
@@ -20,30 +21,33 @@ table class="condensed-table"
     tr
       th width="90px" Price
       th Offer
-      th width="170px"  Conditions
+      th width="170px" Conditions
       th width="100px" Vendor
-      th width="65px"  Request
+      th width="65px"  Buy
   tbody
-    - 1.upto(4) do |i|
+    - Sample::OFFERS.each do |offer|
       tr
         td
-         | &euro; #{i}4.95
+          | &euro; #{offer[:price]} 
 
         td
-          strong Offer #{i}
+          strong Offer #{offer[:id]}
           br
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          #{offer[:description]}
         td
           ul
-            li Guarantee 3 years
-            li Free shipping
+            - offer[:conditions].each do |cond|
+              li =cond
         td
-            a href="#" Vendor #{i}
+          a href="#" #{offer[:vendor]}
         td
           a class="btn small" Buy now
+
 div id="offer_submitted" class="modal hide fade" style="display: none; "
     div class="modal-header"
         a href="#" class="close"&times;
         h3 Thank You
     div class="modal-body"
         p You offer has been requested
+    div class="modal-footer"
+      a href="#" class="btn secondary" onclick="$('#offer_submitted').modal('hide')" Close

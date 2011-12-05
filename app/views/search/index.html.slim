@@ -1,16 +1,16 @@
 h2 Search results
 table class="condensed-table"
   tbody
-    - 1.upto(4) do |i|
+    - Sample::PRODUCTS.each do |product|
         tr
           td
             ul class="media-grid"
               li
                 a href="/offers"
-                  img src="/assets/90x90.gif" class="thumbnail"
+                  img src="/assets/#{product[:image]}" class="thumbnail"
           td
             h3
-                a href="/offers" Product #{i}
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              a href="/offers" #{product[:name]} 
+            #{product[:description]}
           td width="120" style="padding-top:10px"
             a class="btn small success" href="/offers" Show me offers
