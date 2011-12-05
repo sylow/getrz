@@ -28,5 +28,12 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  desc 'Create a symlink for shared config files.'
+  task :symlink_config do
+    %w[config/database.yml].each do |file|
+      run "ln -sf #{shared_path}/#{file} #{latest_release}/#{file}"
+    end
+  end
+  after 'deploy:update_code', 'deploy:symlink_config'
 end
 #require 'config/boot'
