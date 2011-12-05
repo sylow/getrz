@@ -1,5 +1,6 @@
 Web::Application.routes.draw do
-  get "search" => "search#index"
+  get "/search/index"
+  post "/search/index"
 
   resources :offers
   resources :authentications
@@ -13,5 +14,5 @@ Web::Application.routes.draw do
   get "user_sessions/new"
   get "home/index", :as => :home
 
-  root :to => "user_sessions#new"
+  root :to => "search#index"
 end

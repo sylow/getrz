@@ -3,8 +3,9 @@ div class="topbar-wrapper" style="z-index: 5;margin-bottom: 50px"
     div class="topbar-inner"
       div class="container"
         h3
-          a href="#" GetrZ
-        ul class="nav secondary-nav"
+          a href="/home/index"
+            img src="/assets/logo.png" width="120"
+        ul class="nav secondary-nav" style="padding-top:20px"
           - if current_user
             li
               a href="#"
@@ -16,7 +17,3 @@ div class="topbar-wrapper" style="z-index: 5;margin-bottom: 50px"
               ul class="dropdown-menu"
                 li
                   a href="/auth/facebook" Facebook
-                li
-                  a href="/auth/twitter"  Twitter
-                li
-                  a href="/auth/linkedin"  Linked in

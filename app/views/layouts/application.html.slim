@@ -1,15 +1,30 @@
 doctype html
 html
   head
-    title GetrZ
+    title Getrz
     meta name="keywords" content="template language"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
+
   body
     == render "/layouts/navigation"
     div class="container-fluid"
       div class="sidebar"
+        == yield :sidebar
       div class="content"
         == yield
+    footer class="footer"
+        div class="container"
+            p class="pull-right"
+              | Copyright 2011
+            p
+              | Designed and built with all the love in the world by
+              | &nbsp;
+              a href="#" @sylow
+              | &nbsp;and&nbsp;
+              a href="#" @daniilharik
+        div
+            br
+

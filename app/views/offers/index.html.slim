@@ -15,14 +15,27 @@ table class="condensed-table"
   thead
     tr
       th Offer
+      th width="170px"  Conditions
       th width="100px" Vendor
-      th Buy
+      th width="110px"  Buy
   tbody
     - 1.upto(4) do |i|
       tr
         td
-          h3 Offer #{i}
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        td Vendor #{i}
+         | &euro; #{i}4.95
+
         td
-          input class="btn small" value="Buy now" type="submit"
+          strong Offer #{i}
+          br
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        td
+          ul
+            li Guarantee 3 years
+            li Free shipping
+        td
+            a href="#" Vendor #{i}
+        td
+          a class="btn small success" data-controls-modal="offer_submitted" data-backdrop="static" Request an offer
+
+div id="offer_submitted"
+    p Thank You!
