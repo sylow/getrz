@@ -1,4 +1,4 @@
-h2 Offers for
+h2 = @title || "Customer offers"
 table class="condensed-table"
   tbody
       tr
@@ -10,6 +10,10 @@ table class="condensed-table"
         td
           h3 Product Name
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          br
+          br
+          - if @hide_custom_offer != "yes"
+            a class="btn small error"  data-controls-modal="offer_submitted" data-backdrop="static" data-keyboard="true" Make me a personal offer
 
 table class="condensed-table"
   thead
@@ -36,4 +40,10 @@ table class="condensed-table"
         td
             a href="#" Vendor #{i}
         td
-          a class="btn small success" Buy now
+          a class="btn small" Buy now
+div id="offer_submitted" class="modal hide fade" style="display: none; "
+    div class="modal-header"
+        a href="#" class="close"&times;
+        h3 Thank You
+    div class="modal-body"
+        p You offer has been requested
