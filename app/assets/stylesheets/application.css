@@ -7,3 +7,5 @@
  *= require twitter/bootstrap
 */
 body{padding-top:40px;}
+
+.content{width:750px}
