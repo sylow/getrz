@@ -14,10 +14,11 @@ table class="condensed-table"
 table class="condensed-table"
   thead
     tr
+      th width="90px" Price
       th Offer
       th width="170px"  Conditions
       th width="100px" Vendor
-      th width="110px"  Buy
+      th width="65px"  Request
   tbody
     - 1.upto(4) do |i|
       tr
@@ -35,7 +36,4 @@ table class="condensed-table"
         td
             a href="#" Vendor #{i}
         td
-          a class="btn small success" data-controls-modal="offer_submitted" data-backdrop="static" Request an offer
-
-div id="offer_submitted"
-    p Thank You!
+          a class="btn small success" Buy now

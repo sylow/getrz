@@ -5,15 +5,18 @@ div class="topbar-wrapper" style="z-index: 5;margin-bottom: 50px"
         h3
           a href="/home/index"
             img src="/assets/logo.png" width="120"
-        ul class="nav secondary-nav" style="padding-top:20px"
-          - if current_user
-            li
-              a href="#"
-                = current_user.email
-            li= link_to "Sign out", logout_path
-          - else
-            li class="dropdown"
-              a href="#" class="dropdown-toggle" Login with
-              ul class="dropdown-menu"
+        /!
+            ul class="nav secondary-nav" style="padding-top:20px"
+              - if current_user
                 li
+                  a href="#"
+                    = current_user.email
+                li= link_to "Sign out", logout_path
+              - else
+                li class="dropdown"
+                  a href="#" class="dropdown-toggle" Login with
+                  ul class="dropdown-menu"
+                    li
                   a href="/auth/facebook" Facebook
+        ul class="nav secondary-nav" style="padding-top:20px"
+          a href="/offers" My Account
