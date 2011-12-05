@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
+  before_filter :hide_logo
   helper_method :current_user_session, :current_user
 
   private
@@ -43,5 +43,9 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
+  end
+
+  def hide_logo
+    @hide_logo = controller_name == "home"
   end
 end
