@@ -3,21 +3,22 @@
  Credit: Phong Thai Cao - http://www.JavaScriptBank.com
  Please keep this creadit when you use this code
  */
-jQuery('.sexy-bookmarks a.external').click(function() {
+$('.sexy-bookmarks a.external').click(function() {
     // get the current URL & encode it into the standard URI
     var url = encodeURIComponent(window.location.href), desc = '';
 
     // parse the description for the above URL by the text() method of jQuery
     // the text must be placed in the P tag with ID="sexy-bookmarks-content"
     // so you can change the container of description with another tag and/or another ID
-    if (jQuery('p#sexy-bookmarks-content').length) {
-        desc = encodeURIComponent(jQuery('p#sexy-bookmarks-content').text());
+    if ($('p#sexy-bookmarks-content').length) {
+        desc = encodeURIComponent($('p#sexy-bookmarks-content').text());
     }
     // detect the social bookmark site user want to share your URL
     // by checking the className of site that we'll declare in the HTML code
     // and assign the URL & description we got into the current anchor
     // then redirect to the clicked bookmark site, you can use window.open() method for opening the new window
-    switch (this.parentNode.className) {
+    $(this).parent().attr("class");
+    switch ($(this).parent().attr("class")) {
         case 'sexy-twittley':
             this.href += '?title=' + document.title + '&url=' + url + '&desc=' + desc + '&pcat=Internet&tags=';
             break;

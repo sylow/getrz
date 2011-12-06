@@ -3,17 +3,18 @@ div style="width:460px;right-padding:350px"
     fieldset
       div class="clearfix"
         div class="input"
-          img src="/assets/logo_dark.png"
+          a href="/home/index"
+            img src="/assets/logo_dark.png"
       br
       div class="clearfix"
         div class="input"
           h1 What is it?
           p id="sexy-bookmarks-content"
-            = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"
+            | Getrz offers you the best deal to be found worldwide within 48h. Promised!
       div class="clearfix"
         div class="input"
-          =' text_field_tag :search, nil, :placeholder => "Your email address", :class=> "span4"
-          = submit_tag "Submit", :class => "btn primary"
+          =' text_field_tag :email, nil, :placeholder => "Your email address", :class=> "span4", :id=> "email"
+          a class="btn primary" onclick="add_to_signups()" Submit
       div style="margin-left:150px" class="sexy-bookmarks sexy-bookmarks-expand sexy-bookmarks-center sexy-bookmarks-bg-sexy"
           ul class="socials"
             li.sexy-facebook
@@ -38,13 +39,22 @@ div style="width:460px;right-padding:350px"
     footer class="footer" style="background-color:white"
         div class="container"
             p
-                img src="/assets/sponsors/sponsors.png" style="padding-right:120px"
-                img src="/assets/sponsors/twilio.png"
+                img src="/assets/sponsors/sponsors.png" style="padding-right:120px;height:40px"
                 br
-                img src="/assets/sponsors/softlayer.jpg"
+                img src="/assets/sponsors/twilio.png" height="40px" style="padding-right:40px;margin-left:120px"
 
-                img src="/assets/sponsors/atlassian.jpg"
+                img src="/assets/sponsors/softlayer.jpg" height="40px" style="padding-right:40px;"
 
-                img src="/assets/sponsors/startupbootcamp.jpg"
+                img src="/assets/sponsors/atlassian.jpg" height="40px" style="padding-right:40px;"
+
+                img src="/assets/sponsors/startupbootcamp.jpg" height="40px" style="padding-right:40px;"
         div
             br
+div id="modal" class="modal hide fade" style="display: none; "
+    div class="modal-header"
+        a href="#" class="close"&times;
+        h3 Thank You
+    div class="modal-body"
+        p We added you to our database and we will redirect you to our prototype
+    div class="modal-footer"
+      a href="#" class="btn secondary" onclick="window.location='/home/index'" Redirect

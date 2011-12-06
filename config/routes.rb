@@ -16,6 +16,7 @@ Web::Application.routes.draw do
   get "user_sessions/new"
   get "home/index", :as => :home
   get "signups/index"
+  post "signups/create"
   get "/search/index"
   post "/search/index"
 

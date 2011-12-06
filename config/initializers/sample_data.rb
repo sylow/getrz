@@ -31,10 +31,10 @@ module Sample
               { :id=>3, :price=>16.95, :conditions => ["Guarantee 3 years", "Free shipping"], :vendor => "Vendor 3",
                 :description=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
               },
-              { :id=>4, :price=>17.00, :conditions => ["Guarantee 3 years", "Free shipping"], :vendor => "Vendor 4",
+              { :id=>4, :price=>17.00, :conditions => ["Guarantee 3 years", "Don't ship to China"], :vendor => "Vendor 4",
                 :description=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
               }
-                
+
 
             ]
 end
