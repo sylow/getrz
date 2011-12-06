@@ -7,9 +7,10 @@ table class="condensed-table"
           ul class="media-grid"
             li
               a href="/offers"
-                img src="/assets/#{product[:image]}" class="thumbnail"
+                = image_tag "/assets/#{product[:image]}", :class=>"thumbnail"
+
         td
-          h3 #{product[:name]} 
+          h3 #{product[:name]}
           #{product[:description]}
           br
           br
@@ -28,7 +29,7 @@ table class="condensed-table"
     - Sample::OFFERS.each do |offer|
       tr
         td
-          | &euro; #{offer[:price]} 
+          | &euro; #{offer[:price]}
 
         td
           strong Offer #{offer[:id]}

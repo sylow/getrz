@@ -20,5 +20,5 @@ Web::Application.routes.draw do
   get "/search/index"
   post "/search/index"
 
-  root :to => "home#index"
+  root :to => "signups#index"
 end

@@ -7,10 +7,10 @@ table class="condensed-table"
             ul class="media-grid"
               li
                 a href="/offers"
-                  img src="/assets/#{product[:image]}" class="thumbnail" width="100px"
+                  = image_tag "/assets/#{product[:image]}", :class=>"thumbnail", :width=>"100px"
           td
             h3
-              a href="/offers" #{product[:name]} 
+              a href="/offers" #{product[:name]}
             #{product[:description]}
           td width="120" style="padding-top:10px"
             a class="btn small success" href="/offers" Show me offers
