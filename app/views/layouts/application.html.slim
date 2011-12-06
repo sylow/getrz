@@ -2,39 +2,18 @@ doctype html
 html
   head
     title Getrz
-    meta name="keywords" content="template language"
+    meta name="keywords" content="..."
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
 
   body
-    == render "/layouts/navigation"
+    - if controller_name != "signups"
+      == render "/layouts/navigation"
     div class="container-fluid"
       div class="sidebar"
         == yield :sidebar
       div class="content"
         == yield
-    footer class="footer"
-        div class="container"
-            p class="pull-right"
-              | Copyright 2011
-            p
-              | Designed and developed by
-              | &nbsp;
-              a href="#" Aline
-              | ,&nbsp;
-              a href="#" Arne
-              | ,&nbsp;
-              a href="#" Danii
-              | ,&nbsp;
-              a href="#" Gökhan
-              | ,&nbsp;
-              a href="#" Jasmine
-              | ,&nbsp;
-              a href="#" Sylvain
-              | &nbsp;and&nbsp;
-              a href="#" Tim
-        div
-            br
-
+    == content_for?(:footer) ? yield(:footer) : render("/layouts/footer")

@@ -1,0 +1,37 @@
+div style="width:460px;right-padding:350px"
+  = form_tag "/home/signup", :method=> :get, :style=> "margin-bottom:80px;text-align:center" do
+    fieldset
+      div class="clearfix"
+        div class="input"
+          img src="/assets/logo_dark.png"
+      div class="clearfix"
+        div class="input"
+          h3 What is it?
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+      div class="clearfix"
+        div class="input"
+          =' text_field_tag :search, nil, :placeholder => "Your email address", :class=> "span4"
+          = submit_tag "Submit", :class => "btn primary"
+
+footer class="footer"
+    div class="container"
+        p class="pull-right"
+          | Copyright 2011
+        p
+          | Designed and developed by
+          | &nbsp;
+          a href="#" Aline
+          | ,&nbsp;
+          a href="#" Arne
+          | ,&nbsp;
+          a href="#" Daniil
+          | ,&nbsp;
+          a href="#" Gökhan
+          | ,&nbsp;
+          a href="#" Jasmine
+          | ,&nbsp;
+          a href="#" Sylvain
+          | &nbsp;and&nbsp;
+          a href="#" Tim
+    div
+        br

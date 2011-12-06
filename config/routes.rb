@@ -1,4 +1,5 @@
 Web::Application.routes.draw do
+
   resources :offers do
     collection do
       get :personal
@@ -14,6 +15,7 @@ Web::Application.routes.draw do
 
   get "user_sessions/new"
   get "home/index", :as => :home
+  get "signups/index"
   get "/search/index"
   post "/search/index"
 
